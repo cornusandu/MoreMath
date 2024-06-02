@@ -1,5 +1,5 @@
 from __future__ import annotations
-from Numbers import Number
+from .Numbers import Number
 import math
 
 def IsPrime(self: int | float | Number = Number(0)) -> bool:

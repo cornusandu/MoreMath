@@ -1,12 +1,11 @@
 from __future__ import annotations
-from Functions import IsPrime
 from typing import Any
+import math
 
 class Number(float):
     def __init__(self, value: int | float = 0):
         self.value = value
         self._val = value
-        self.IsPrime = IsPrime
 
     def __repr__(self):
         return self.value
@@ -19,3 +18,13 @@ class Number(float):
 
     def __float__(self):
         return float(self.value)
+
+    def IsPrime(self) -> bool:
+        value = self.value
+
+        maximum: float = math.sqrt(value)
+        for i in range(2, math.ceil(maximum)):
+            if value % i == 0:
+                return False
+
+        return True
